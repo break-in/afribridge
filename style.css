@@ -309,6 +309,19 @@ nav {
 .why-item {
     display: flex;
     gap: 1.5rem;
+    /* NEW: Added padding, rounded corners, and transitions to act like a card */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid transparent; 
+    transition: var(--transition);
+}
+
+/* NEW: The hover effect mirroring the Services section */
+.why-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: var(--accent-color);
+    background: var(--bg-card); /* Ensures it looks great in both light and dark modes */
 }
 
 .why-icon {
@@ -322,8 +335,14 @@ nav {
     justify-content: center;
     font-size: 1.5rem;
     flex-shrink: 0;
+    transition: var(--transition); /* NEW: Smooth transition for the icon */
 }
 
+/* NEW: Makes the icon flip to the accent color and grow slightly when the item is hovered */
+.why-item:hover .why-icon {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
 /* Contact Section */
 .contact {
     background: var(--primary-color);
